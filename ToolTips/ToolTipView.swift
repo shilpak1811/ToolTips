@@ -8,23 +8,15 @@
 
 import UIKit
 
-enum ToolTipPosition {
-    case left
-    case middle
-    case right
-}
-
 class ToolTipView: UIView {
 
     var roundRect: CGRect!
     var toolTipWidth: CGFloat = 20.0
     var toolTipHeight: CGFloat = 20.0
     var cornerRadius: CGFloat = 5.0
-    var position: ToolTipPosition = .middle
     
-    convenience init(frame: CGRect, cornerRadius: CGFloat, position: ToolTipPosition, text: String) {
+    convenience init(frame: CGRect, cornerRadius: CGFloat, text: String) {
         self.init(frame: frame)
-        self.position = position
         self.cornerRadius = cornerRadius
         createLabel(text)
     }
@@ -35,6 +27,7 @@ class ToolTipView: UIView {
     }
     
     private func getTipPath() -> UIBezierPath {
+       
         let toolTipRect = CGRect(x: roundRect.midX-10, y: roundRect.maxY, width: toolTipWidth, height: toolTipHeight)
         let trianglePath = UIBezierPath()
         trianglePath.move(to: CGPoint(x: toolTipRect.minX, y: toolTipRect.minY))

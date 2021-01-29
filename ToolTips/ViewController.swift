@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         let tooltipViewWidth: CGFloat = 200
         let tooltipViewHeight: CGFloat = 200
         let rect = CGRect(x: showTootipButton.frame.midX-tooltipViewWidth/2, y: showTootipButton.frame.minY-tooltipViewHeight, width: tooltipViewWidth, height: tooltipViewHeight)
-        toolTip = ToolTipView(frame: rect, cornerRadius: 10.0, position: .middle, text: "Hello! Please feel free to fill the useful information for the user here")
+        toolTip = ToolTipView(frame: rect, cornerRadius: 10.0, text: "Hello! ")
         UIApplication.shared.keyWindow?.addSubview(toolTip)
         performShow(toolTip)
     }
